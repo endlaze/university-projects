@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayColor"
+    tools:context="com.example.android.searchim.MainActivity">
+
+
+    <ImageView
+
+        android:id="@+id/imageViewer"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/blueColor"
+        android:padding="20dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageViewer"
+        android:layout_marginTop="13dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/blueColor"
+            android:orientation="vertical" />
+
+
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+
+        android:layout_height="100dp">
+
+        <Button
+            android:id="@+id/cameraButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="22dp"
+            android:onClick="takePictureAction"
+            android:text="@string/cameraButton"
+            android:textColor="@color/textColor"
+            android:theme="@style/ButtonStyle"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+        <Button
+
+            android:id="@+id/galleryButton2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="22dp"
+            android:onClick="selectFromGalleryAction"
+            android:padding="10dp"
+
+            android:text="@string/galleryButton"
+            android:textColor="@color/textColor"
+            android:theme="@style/ButtonStyle"
+            android:textSize="20dp"
+            />
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/horizontalScrollView"
+        android:layout_marginBottom="64dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/imageViewer"
+        android:layout_toRightOf="@+id/imageViewer"
+        android:background="@drawable/button_shape"
+        android:elevation="100dp"
+        android:padding="15dp"
+        android:layout_margin="10dp"
+        app:srcCompat="@color/blueColor"
+        android:theme="@style/ButtonStyle"/>
+
+
+</RelativeLayout>

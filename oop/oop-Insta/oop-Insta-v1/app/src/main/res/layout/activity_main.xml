@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.instapoo.com.example.android.mainclasses.MainActivity"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/topBanner"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorBannerMainPage"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+
+        >
+
+    </RelativeLayout>
+
+
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="471dp"
+        android:layout_below="@id/topBanner"
+
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scrollView2">
+
+
+        <LinearLayout
+            android:id="@+id/linearImages"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+
+        android:background="@color/colorBannerMainPage"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
+
+        <ImageButton
+            android:id="@+id/photoButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/camera2"
+            android:onClick="openCamera"
+
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
+<TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scrollView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
+        android:layout_centerHorizontal="true"
+        android:text="InstaPOO" />
+
+</RelativeLayout>
