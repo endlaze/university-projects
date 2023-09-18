@@ -1,0 +1,24 @@
+<app-nav></app-nav>
+<section class="body-wrapper">
+  <div class=" row page-title text-white d-block">
+    <h1 class="font-weight-bold"><i class="fas fa-music pr-2"></i>Música</h1>
+    <div class="page-subtitle font-weight-bold pt-2">
+      Aquí encontraras la mejor música de todos los tiempos.
+    </div>
+  </div>
+  <div class="row p-5 center">
+    <div class="col center pl-5 pr-5 mb-5 mw-220 zoom shadow" *ngFor="let album of musicCatalog" (click)="previewAlbum(album)">
+      <div class="text-center">
+        <div>
+          <img class="cover" src="{{album.cover}}">
+        </div>
+        <div class="w-200 bg-white pt-2 pb-2">
+          <label class="text-dark pl-2 pr-2  fs-13 mh-95 unselectable">{{album.title}}</label>
+        </div>
+        <div class="w-200 bg-success center unselectable">
+          <label class=" text-white font-weight-bold pt-1 pt-2">{{album.artist}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

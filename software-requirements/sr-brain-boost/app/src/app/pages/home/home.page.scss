@@ -1,0 +1,47 @@
+.map-wrapper {
+  width: 400px;
+  height: 400px;
+}
+
+$blue-background: #2d82c5;
+
+.reminders-modal .modal-wrapper {
+  --height: 70%;
+  --width: 70%;
+
+}
+
+ion-checkbox .item-cover {
+  display: none;
+}
+
+
+.pl {
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+}
+
+.bottom-border {
+  border-bottom: solid #dfdfdf 1px;
+}
+
+.icon-color {
+  color: $blue-background;
+}
+
+.reminder-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.reminder-desc {
+  font-size: 1em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn-common-color {
+  color: $blue-background;
+}

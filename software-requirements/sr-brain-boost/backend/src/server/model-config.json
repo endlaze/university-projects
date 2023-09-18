@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "../models/company-info-model",
+      "../models/faq-model",
+      "../models/app-user-model",
+      "../models/stock-roles-model",
+      "../models/stock-sub-roles-model"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "CompanyInfo": {
+    "dataSource": "postgreDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true
+        }
+      }
+    }
+  },
+  "FAQ": {
+    "dataSource": "postgreDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "create": true
+        }
+      }
+    }
+  },
+  "app_user": {
+    "dataSource": "postgreDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": true
+        }
+      }
+    }
+  },
+  "stock_roles": {
+    "dataSource": "postgreDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": true,
+          "find": true
+        }
+      }
+    }
+  },
+  "stock_subroles": {
+    "dataSource": "postgreDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  }
+}

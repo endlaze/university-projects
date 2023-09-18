@@ -1,0 +1,41 @@
+<app-sidemenu></app-sidemenu>
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button class="btn-common-color"></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">BrainBoost</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Último recordatio</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-label>
+          <h3 class="reminder-title">{{lastReminder.rem_title}}</h3>
+          <p class="ion-text-wrap reminder-desc"><span class="bold">Descripción: </span> {{lastReminder.rem_desc}} </p>
+          <p class="reminder-desc"><span class="bold">Fecha: </span>{{lastReminder.rem_date | date: "mediumDate"}}</p>
+          <p class="reminder-desc"><span class="bold">Hora: </span>{{lastReminder.rem_time| date: "shortTime"}}</p>
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-button color="danger" slot="end">Estoy perdido</ion-button>
+      </ion-item>
+
+      <ion-card-content class="map-wrapper">
+        <app-map></app-map>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+
+</div>

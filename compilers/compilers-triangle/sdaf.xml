@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="yes"?>
+<Program>
+<LetCommand>
+<SequentialDeclaration>
+<VarDeclaration>
+<Identifier value="m"/>
+<IntTypeDenoter/>
+</VarDeclaration>
+<LocalDeclaration>
+<SequentialDeclaration>
+<VarInitDeclaration>
+<IntegerExpression>
+<IntegerLiteral value="2"/>
+</IntegerExpression>
+<Identifier value="n"/>
+</VarInitDeclaration>
+<FuncDeclaration>
+<Identifier value="mult"/>
+<MultipleFormalParameterSequence>
+<VarFormalParameter>
+<Identifier value="a"/>
+<IntTypeDenoter/>
+</VarFormalParameter>
+<SingleFormalParameterSequence>
+<VarFormalParameter>
+<Identifier value="b"/>
+<IntTypeDenoter/>
+</VarFormalParameter>
+</SingleFormalParameterSequence>
+</MultipleFormalParameterSequence>
+<IntTypeDenoter/>
+<BinaryExpression>
+<VnameExpression>
+<SimpleVname>
+<Identifier value="a"/>
+</SimpleVname>
+</VnameExpression>
+<Operator value="*"/>
+<VnameExpression>
+<SimpleVname>
+<Identifier value="b"/>
+</SimpleVname>
+</VnameExpression>
+</BinaryExpression>
+</FuncDeclaration>
+</SequentialDeclaration>
+<FuncDeclaration>
+<Identifier value="double"/>
+<SingleFormalParameterSequence>
+<VarFormalParameter>
+<Identifier value="a"/>
+<IntTypeDenoter/>
+</VarFormalParameter>
+</SingleFormalParameterSequence>
+<IntTypeDenoter/>
+<CallExpression>
+<Identifier value="mult"/>
+<MultipleActualParameterSequence>
+<VarActualParameter>
+<SimpleVname>
+<Identifier value="a"/>
+</SimpleVname>
+</VarActualParameter>
+<SingleActualParameterSequence>
+<VarActualParameter>
+<SimpleVname>
+<Identifier value="n"/>
+</SimpleVname>
+</VarActualParameter>
+</SingleActualParameterSequence>
+</MultipleActualParameterSequence>
+</CallExpression>
+</FuncDeclaration>
+</LocalDeclaration>
+</SequentialDeclaration>
+<SequentialCommand>
+<AssignCommand>
+<SimpleVname>
+<Identifier value="m"/>
+</SimpleVname>
+<IntegerExpression>
+<IntegerLiteral value="9"/>
+</IntegerExpression>
+</AssignCommand>
+<AssignCommand>
+<SimpleVname>
+<Identifier value="m"/>
+</SimpleVname>
+<CallExpression>
+<Identifier value="double"/>
+<SingleActualParameterSequence>
+<VarActualParameter>
+<SimpleVname>
+<Identifier value="m"/>
+</SimpleVname>
+</VarActualParameter>
+</SingleActualParameterSequence>
+</CallExpression>
+</AssignCommand>
+</SequentialCommand>
+</LetCommand>
+</Program>

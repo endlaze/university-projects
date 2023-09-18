@@ -1,0 +1,46 @@
+<app-app-nav></app-app-nav>
+<div>
+  <div class="modal-header center-title" *ngIf="this.currentRole === 'Participante'">
+    <button class="center-div btn btn-success" (click)="goToRoute('auctions/create')">Crear subasta</button>
+  </div>
+
+  <div class="modal-content">
+    <div class="modal-header center-title">
+      <select class='form-control' [(ngModel)]="category" (change)="updateSubCategories()">
+        <option *ngFor="let cat of categories">{{cat}}</option>
+      </select>
+    </div>
+
+    <div class="modal-header center-title">
+      <select class='form-control' [(ngModel)]="subCategory">
+        <option *ngFor="let sub of currentSub" value={{sub.IdSubcategoria}}>{{sub.Subcategoria}}</option>
+      </select>
+    </div>
+
+    <div class="modal-header center-title">
+      <button class="center-div btn btn-primary" (click)="sendId()">Buscar subastas</button>
+    </div>
+    <div>
+      <table id="auctions">
+        <tr>
+          <th>Usuario que realiza subasta</th>
+          <th>Nombre de subasta</th>
+          <th>Descripcion de subasta</th>
+          <th>Precio base de subasta</th>
+          <th>Expira</th>
+          <th colspan="2">Accion</th>
+        </tr>
+        <tr *ngFor="let auction of auctions">
+          <td (click)="goToProfile(auction.Alias)">{{auction.Alias}}</td>
+          <td>{{auction.Nombre}}</td>
+          <td>{{auction.Descripcion}}</td>
+          <td>{{auction.PrecioBase}}</td>
+          <td>{{formatDate(auction.FechaFinal)}}</td>
+          <td><button (click)="goToBids(auction.IdSubasta)">Ver pujas</button></td>
+          <td *ngIf="(this.currentRole === 'Participante') && (this.currentAlias !== auction.Alias)"><button
+              (click)="goToCreateBid(auction.IdSubasta)">Pujar</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

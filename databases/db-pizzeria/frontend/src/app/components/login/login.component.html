@@ -1,0 +1,14 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="container-fluid login-form">
+    <div class="form-group">
+      <input type="email" placeholder="Correo" formControlName="username" class="form-control login-input"
+        [ngClass]="{ 'is-invalid': submitted && form.username.errors }" />
+      <div class="error-label">
+      </div>
+    </div>
+    <div class="group-form">
+      <button class="btn btn-authenticate" type='button' (click)='showRegisterPage()'>Registrar Usuario</button>
+      <button class="btn btn-authenticate" type='submit'>Iniciar Sesión</button>
+    </div>
+  </form>
+</div>

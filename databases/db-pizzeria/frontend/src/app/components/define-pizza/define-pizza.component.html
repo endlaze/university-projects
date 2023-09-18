@@ -1,0 +1,24 @@
+<div class="modal-content fixed-top center-div">
+  <div>
+    <div class="modal-header center-title center">
+      <h4>Nombre de la pizza</h4>
+      <input type="text" [(ngModel)]="namePizza" class="input-margin">
+    </div>
+  </div>
+  <div>
+    <div class="modal-header center-title">
+      <h3>Seleccione los ingredientes</h3>
+    </div>
+    <div class="center">
+      <div class='grid-container'>
+        <div *ngFor="let ing of stockIng" id="{{ing.IdIngrediente}}" class="grid-item" (click)="changeIngState (ing)">
+          <label> {{ing.Nombre}} </label>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal-footer">
+    <button (click)="savePizza()">Confirmar</button>
+    <button (click)="close()">Cancelar</button>
+  </div>
+</div>

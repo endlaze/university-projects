@@ -1,0 +1,74 @@
+$blue-background: #2d82c5;
+
+.blue-component {
+  background-color: $blue-background;
+}
+
+.name-label {
+  padding: 1.1em;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.center {
+  display: flex;
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.prof-label {
+  padding-right: 0.2em;
+  font-weight: bold;
+  color: black
+}
+
+.prof-font-size {
+  font-size: 0.91em;
+}
+
+.grid-label {
+  display: grid;
+}
+
+.prof-ficture {
+  margin-top: 2em;
+  width: 6em;
+  height: 6em;
+}
+
+.token-label {
+  font-size: 2.2em;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.token-caption {
+  font-size: 0.9em;
+}
+
+.label-blue-icon {
+  font-size: 1.4em;
+  padding-right: 0.3em;
+  vertical-align: middle;
+  font-weight: bold;
+  color: black;
+}
+
+.caption-padding {
+  padding-left: 1.8em;
+}
+
+.capt-top-padding {
+  padding-top: 0.3em;
+}
+
+.header-font-size {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}

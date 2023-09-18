@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- metadata -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/portafolio-web/src/assets/styles/common.css">
+  <link rel="stylesheet" type="text/css" href="/portafolio-web/src/pages/sign-up/sign-up.css">
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- scripts -->
+  <script src="https://kit.fontawesome.com/db11830158.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/portafolio-web/src/pages/sign-up/sign-up.js"></script>
+  <script type="text/javascript" src="/portafolio-web/src/utils/includeHTML.js"></script>
+</head>
+
+<body>
+  <div render-component="/portafolio-web/src/components/navbar/navbar.html"></div>
+  <div class="mt-5">
+    <div class="card-body mt-5">
+      <form class="p-4 text-justify center form-width  p-0 text-light font-weight-bold"
+        onsubmit="createAccount(); return false;">
+        <div class="display-block card-header text-center border bg-primary rounded-top p-4">
+          <h4 class="card-title">Registrarse</h4>
+        </div>
+        <div class="card-body border border-top-0 rounded-bottom">
+          <div class="form-row">
+            <div class="form-group text-dark col">
+              <label class="font-weight-bold">Nombre</label>
+              <input type="text" class="form-control" placeholder="Ingrese su nombre" autocomplete="off" required>
+            </div>
+            <div class="form-group text-dark col">
+              <label class="font-weight-bold">Apellidos</label>
+              <input type="text" class="form-control" placeholder="Ingrese sus apellidos" autocomplete="off" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group text-dark col mb-0">
+              <label class="font-weight-bold">Usuario</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Ingrese un nombre de usuario" autocomplete="off"
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group text-dark col mb-0">
+              <label class="font-weight-bold">Correo electrónico</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="Ingrese un correo electrónico" autocomplete="off"
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group text-dark col mb-0">
+              <label class="font-weight-bold">Teléfono</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                </div>
+                <input type="number" class="form-control" placeholder="Ingrese un número de teléfono" autocomplete="off"
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group text-dark col mb-0">
+              <label class="font-weight-bold">Fecha de nacimiento</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+                <input type="date" class="form-control" autocomplete="off" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group text-dark col mb-0">
+              <label class="font-weight-bold">Contraseña <i class="fas fa-info-circle"></i></label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input id="usrPassword" type="password" class="form-control" placeholder="Ingrese una contraseña"
+                  required minlength="8" autocomplete="new-password" oninput="updateTags()">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group text-dark col mb-0">
+              <label class="font-weight-bold">Confirmación de contraseña</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input id="usrPasswordConfirm" type="password" class="form-control"
+                  placeholder="Vuelva a ingresar la contraseña" autocomplete="new-password" required>
+              </div>
+            </div>
+          </div>
+          <p class="text-dark">
+            La contraseña debe contener mínimo:
+            <span id="uppLetter" class="font-weight-bold"> 1 MAYÚSCULA</span>,
+            <span id="lowLetter" class="font-weight-bold"> 1 minúscula</span></span>,
+            <span id="pwNum" class="font-weight-bold">1 número</span></span>,
+            <span id="pwLength">8 caracteres</span>.
+          </p>
+          <button type="submit" class="btn btn-primary font-weight-bold btn-block">
+            Crear cuenta
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>includeHTML();</script>
+</body>
+
+</html>

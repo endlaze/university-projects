@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}

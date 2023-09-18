@@ -1,0 +1,22 @@
+<app-app-nav></app-app-nav>
+
+<div class="modal-content">
+  <div class="modal-header center-title">
+    <h3 class="center-div">Crear puja</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-horizontal user-form modal-body">
+      <div>
+        <p>La oferta a superar es de {{maxBid}}</p>
+        <p>El aumento minimo esta en {{minPush}}</p>
+      </div>
+      <div class="form-group">
+        <input type="number" min={{maxBid+minPush}} class="form-control input-create" placeholder="Precio base"
+          maxlength="9" [(ngModel)]='bid' required>
+      </div>
+      <div class="modal-footer center-div">
+        <button class="btn btn-danger center-div" (click)="pushBid()"> Pujar </button>
+      </div>
+    </div>
+  </div>
+</div>

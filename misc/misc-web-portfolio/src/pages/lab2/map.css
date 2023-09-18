@@ -1,0 +1,16 @@
+.app_map {
+  height: 750px;
+  width: 750px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  background-image: url('circle.png');
+  text-align: center;
+}

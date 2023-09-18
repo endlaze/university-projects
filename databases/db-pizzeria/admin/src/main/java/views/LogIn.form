@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.LogIn">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="197" y="100" width="515" height="430"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="3dd8f" class="javax.swing.JLabel" binding="registerLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="50" right="0" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Registrarse"/>
+        </properties>
+      </component>
+      <component id="1975d" class="javax.swing.JButton" binding="loginButton">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text value="Login"/>
+        </properties>
+      </component>
+      <component id="2512e" class="javax.swing.JFormattedTextField" binding="emailTextBox">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="1" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="1.0" weighty="1.0" ipadx="80"/>
+        </constraints>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>

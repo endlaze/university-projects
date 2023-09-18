@@ -1,0 +1,90 @@
+<section>
+  <ion-avatar class="prof-ficture center">
+    <img
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjYzVkYmZmIiBkPSJNMCAwaDUxMnY1MTJIMHoiLz48cGF0aCBkPSJNMjU2IDMwNGM2MS42IDAgMTEyLTUwLjQgMTEyLTExMlMzMTcuNiA4MCAyNTYgODBzLTExMiA1MC40LTExMiAxMTIgNTAuNCAxMTIgMTEyIDExMnptMCA0MGMtNzQuMiAwLTIyNCAzNy44LTIyNCAxMTJ2NTZoNDQ4di01NmMwLTc0LjItMTQ5LjgtMTEyLTIyNC0xMTJ6IiBmaWxsPSIjODJhZWZmIi8+PC9zdmc+" />
+  </ion-avatar>
+  <ion-item lines="none">
+    <ion-label class="center-text name-label ion-text-wrap">{{userInfo.name}} {{userInfo.first_last_name}}
+      {{userInfo.second_last_name}}</ion-label>
+  </ion-item>
+</section>
+<ion-list>
+  <ion-list-header class="blue-component grid-label">
+    <ion-card-subtitle color="light" class="header-font-size">Información general</ion-card-subtitle>
+  </ion-list-header>
+  <ion-item lines="full">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="person" class="label-blue-icon"></ion-icon>Identificación
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding">{{userInfo.user_id}}</span>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="calendar" class="label-blue-icon"></ion-icon>Fecha de nacimiento
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding">{{userInfo.birthday | date: "mediumDate"}}</span>
+    </ion-label>
+  </ion-item>
+  <ion-list-header class="blue-component">
+    <ion-card-subtitle color="light" class="header-font-size">Contacto</ion-card-subtitle>
+  </ion-list-header>
+  <ion-item lines="full">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="home" class="label-blue-icon"></ion-icon>Domicilio
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding">{{userInfo.address}}</span>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="mail" class="label-blue-icon"></ion-icon>Correo electrónico
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding">{{userInfo.email}}</span>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="call" class="label-blue-icon"></ion-icon>Teléfono
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding">{{userInfo.phone_number}}</span>
+    </ion-label>
+  </ion-item>
+  <ion-list-header class="blue-component">
+    <ion-card-subtitle color="light" class="header-font-size">Atributos de la cuenta</ion-card-subtitle>
+  </ion-list-header>
+  <ion-item lines="full">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="contact" class="label-blue-icon"></ion-icon>Rol principal
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding">{{userRole.role_desc}}</span>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="full" *ngIf="userRole.role_id !== 1">
+    <ion-label class="prof-font-size grid-label">
+      <span class="prof-label">
+        <ion-icon name="contacts" class="label-blue-icon"></ion-icon>Roles secundarios
+      </span>
+      <span class="ion-text-wrap caption-padding capt-top-padding" *ngFor="let subrole of userSubroles">
+        - {{subrole.subrole_desc}}
+      </span>
+    </ion-label>
+  </ion-item>
+  <ion-list-header class="blue-component">
+    <ion-card-subtitle color="light" class="header-font-size">Vinculación de cuentas</ion-card-subtitle>
+  </ion-list-header>
+  <ion-item lines="none">
+    <ion-label class="ion-text-wrap token-caption">
+      Puedes usar el siguiente código para vincular tu cuenta con la de otro usuario
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="prof-font-size token-label"> {{userInfo.user_token}}</ion-label>
+  </ion-item>
+</ion-list>

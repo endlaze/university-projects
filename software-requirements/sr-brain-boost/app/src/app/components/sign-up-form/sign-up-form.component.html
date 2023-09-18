@@ -1,0 +1,84 @@
+<form [formGroup]="signUpForm" (ngSubmit)="createUser()">
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Información personal</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Identificación</ion-label>
+      <ion-input type="number" formControlName="id" placeholder="Solo digite números" (ionChange)="checkId($event)"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Nombre</ion-label>
+      <ion-input type="text" formControlName="name" placeholder="Solo digite letras"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Primer apellido</ion-label>
+      <ion-input type="text" formControlName="first_last_name" placeholder="Solo digite letras"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Segundo apellido</ion-label>
+      <ion-input type="text" formControlName="second_last_name" placeholder="Solo digite letras"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Fecha de nacimiento</ion-label>
+      <ion-datetime doneText="Guardar" cancelText="Cancelar" value="1990-01" min="1910-01" displayFormat="DD MMM YYYY"
+        monthShortNames="{{customMonthNames}}" (ionChange)="onDateChange($event)">
+      </ion-datetime>
+    </ion-item>
+  </ion-card>
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Contacto</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Dirección</ion-label>
+      <ion-input type="text" formControlName="address" placeholder="Ingrese una dirección"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Correo electrónico</ion-label>
+      <ion-input type="email" formControlName="email" placeholder="Ingrese un correo electrónico"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Número de teléfono</ion-label>
+      <ion-input type="number" formControlName="phone_number" min="8" max="8" placeholder="Solo digite números">
+      </ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Atributos de la cuenta</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item>
+      <ion-label class="card-label" position="stacked">Tipo de usuario</ion-label>
+      <ion-select lines="none" value="1" okText="Guardar" cancelText="Cancelar" formControlName="user_role"
+        [interfaceOptions]="userRoleSelectOptions" (ionChange)="onRoleChange($event)">
+        <ion-select-option *ngFor="let role of userRoles" value="{{role.role_id}}">{{role.role_desc}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-list *ngIf="this.form.user_role.value !== 1">
+      <ion-item lines="full" *ngFor="let subrole of selectedSubroles">
+        <ion-label>{{subrole.subrole_desc}}</ion-label>
+        <ion-checkbox [(ngModel)]="subrole.checked" [ngModelOptions]="{standalone: true}"
+          (click)="onSubRoleChange(subrole.subrole_id)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card class="card-section">
+    <ion-card-header class="blue-component">
+      <ion-card-subtitle color="light">Seguridad</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password" placeholder="Ingrese una contraseña"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label class="card-label" position="stacked">Confirmar contraseña</ion-label>
+      <ion-input type="password" formControlName="passwordConfirm" placeholder="Ingrese de nuevo la contraseña">
+      </ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-button class="blue-component submit-button center" type="submit" [disabled]="!signUpForm.valid">
+    Crear usuario
+  </ion-button>
+</form>

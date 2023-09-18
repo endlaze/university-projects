@@ -1,0 +1,16 @@
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="form-horizontal user-form modal-body">
+  <div class="form-group">
+    <label> Datos de la tarjeta de credito</label>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label> Numero de tarjeta</label>
+    <input type="number" class="form-control inl" placeholder=" " min=0 formControlName="numCredCard" required>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label> CVC</label>
+    <input type="number" class="form-control inl" placeholder=" " min=0 formControlName="cvc" required>
+  </div>
+  <div class="modal-footer center-div">
+    <button class="btn btn-success center-div" type="submit" [disabled]="this.cardForm.invalid"> Confirmar</button>
+  </div>
+</form>

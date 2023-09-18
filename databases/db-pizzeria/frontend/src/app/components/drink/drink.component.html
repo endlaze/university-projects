@@ -1,0 +1,21 @@
+<div class="modal-content center-div">
+  <div>
+    <div class="modal-header center-title">
+      <h5>Agregar una bebida</h5>
+    </div>
+    <div>
+      <select [ngModel]="selectedDrink" (ngModelChange)="onDrinkChange($event)" name="ingredient.selector">
+        <option [value]="drink.IdBebidaStock" *ngFor="let drink of stockDrinks">{{drink.Nombre}}</option>
+      </select>
+      <select [ngModel]="selectedSize" (ngModelChange)="onSizeChange($event)" name="ingredient.selector">
+        <option [value]="size.IdTamBebidaStock" *ngFor="let size of stockSizes">{{size.Tam}} - ₡ {{size.PrecioBase}}
+        </option>
+      </select>
+      <input type="number" min=1 (input)="onQuantityChange($event.target.value)" value=1>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button (click)="saveDrink()">Confirmar</button>
+    <button (click)="close()">Cancelar</button>
+  </div>
+</div>

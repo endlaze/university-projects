@@ -1,0 +1,44 @@
+$blue-background: #2A78B6;
+
+.center-button {
+  position: relative;
+  margin: auto;
+}
+
+.blue-label {
+  color: $blue-background;
+  font-weight: bold
+}
+
+.no-margin-bot {
+  margin-bottom: 0
+}
+
+.no-margin-top {
+  margin-top: 0
+}
+
+.brain-boost-logo {
+  width: 35%;
+  height: 35%;
+}
+
+.login-card {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.center {
+  display: flex;
+  justify-content: center
+}
+
+.login-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.brain-boost-letters {
+  width: 85%;
+  height: 60%;
+}

@@ -1,0 +1,51 @@
+$blue-background: #2d82c5;
+
+.card-section {
+  border-radius: 0%;
+}
+
+.blue-component {
+  background-color: $blue-background;
+}
+
+.card-label {
+  padding: 1.1em;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: black
+}
+
+.submit-button {
+  color: white !important;
+  --border-radius: 0%;
+  --background: $blue-background;
+}
+
+.login-card {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.no-bot-margin {
+  margin-bottom: 0%
+}
+
+.title {
+  font-size: 1.1em
+}
+
+.no-padding-bot {
+  padding-bottom: 0%
+}
+
+.no-margin-top {
+  margin-top: 0
+}
+
+.margin-top-1 {
+  margin-top: 2em
+}
+
+.logo-right-padding {
+  padding-right: 0.5em
+}

@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+:root {
+    --oxford-blue: #012345;
+    --prussian-blue:#123456;
+    --indigo-dye: #234567;
+    --bdazzled-blue: #345678;
+    --queen-blue: #456789;
+    --fullwidth: 100%;
+}
+
+.bg-oxford {
+    background: var(--oxford-blue);
+}
+
+.indigodye-font-color {
+    color: var(--bdazzled-blue);
+}
+
+.font-w-1 {
+    font-weight: 1;
+}
+.common-form-wrapper {
+    width: 45rem;
+}
+
+.blue-font {
+    color: var(--oxford-blue);
+}
+
+body {
+    background: var(--oxford-blue);
+    font-size: 1.1em;
+}
+
+.border-primary {
+    border-color: var(--bdazzled-blue);
+}
+
+.text-oxford {
+    color: var(--oxford-blue);;
+}
+
+.btn-primary {
+    background-color: var(--oxford-blue);
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:disabled, .btn-primary:active, .btn-primary.activprimary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: var(--prussian-blue);
+}
+
+.page-title {
+    text-align: center;
+    padding: 10px 10px 30px;   
+}
+
+.under-nav-padding {
+    padding: 10px 10px 30px;   
+}
+
+.page-subtitle{
+    margin-top: 10px;
+    padding: 0 25px;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.body-wrapper {
+    padding-top: 150px;
+}
+
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.disc-price{
+    text-decoration:line-through;
+  }
+  
+  .max-preview-width{
+    max-width: 50em;
+}

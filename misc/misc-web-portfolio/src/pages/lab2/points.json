@@ -1,0 +1,49 @@
+{
+  "points": [
+    {
+      "name": "Gym Up Oreamuno",
+      "info": "Día 1 (Inicio): Clase de Insanity",
+      "coordinates": [
+        9.8689449,
+        -83.9049042
+      ],
+      "icon": "machine.png"
+    },
+    {
+      "name": "Gimnasio Kinesis",
+      "info": "Día 2: Sesión de pesas",
+      "coordinates": [
+        9.86703,
+        -83.90422
+      ],
+      "icon": "weight.png"
+    },
+    {
+      "name": "Palestra Top Level",
+      "info": "Día 3: Clase de Crossfit",
+      "coordinates": [
+        9.8652642,
+        -83.9174440
+      ],
+      "icon": "weightlifter.png"
+    },
+    {
+      "name": "Fighters Camp MMA",
+      "info": "Día 4: Clase de MMA",
+      "coordinates": [
+        9.8700791,
+        -83.9147888
+      ],
+      "icon": "rowing.png"
+    },
+    {
+      "name": "Centuria Strength and Conditioning",
+      "info": "Día 5 (Fin): Clase de Crossfit",
+      "coordinates": [
+        9.8703900,
+        -83.9060800
+      ],
+      "icon": "gymnast.png"
+    }
+  ]
+}

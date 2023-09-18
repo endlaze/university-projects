@@ -1,0 +1,70 @@
+@red: #df0101;
+@grey: #444444;
+@loginComponentsWidth: 20em;
+@full: 100%;
+
+@red: #df0101; 
+
+.login-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  text-align: center;
+  width: @loginComponentsWidth;
+}
+
+.logo-container {
+  display: table;
+  height: 4em;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  width: auto;
+}
+
+.login-container {
+  font-size: 14px;
+  background-color: @grey;
+  height: @full;
+  margin: 0 auto;
+  overflow: hidden;
+  position: fixed;
+  width: @full;
+}
+
+.btn-authenticate {
+  background-color: @red;
+  border-color: @red;
+  border-width: 2px;
+  color: white;
+  margin-top: 5%;
+  font-size: inherit;
+  width: @loginComponentsWidth;
+  &:hover {
+    color:white;
+    font-weight: bolder;
+  }
+}
+
+.login-input {
+  font-size: inherit;
+  width: @loginComponentsWidth;
+}
+
+.container-fluid:before, .container-fluid:after {
+  display: table;
+  content: " ";
+}
+
+input, button {
+  height: 34px;
+}
+
+.error-label{
+  font-size: 15px;
+  color: @red !important;
+  font-weight: bold;
+}
+
+#toast-container > div {
+  opacity:1;
+}

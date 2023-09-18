@@ -1,0 +1,64 @@
+<app-app-nav></app-app-nav>
+
+<div class="modal-content">
+  <div class="modal-header center-title">
+    <h3 class="center-div">Crear {{this.selRole}}</h3>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-horizontal user-form modal-body">
+      <div *ngIf="currentRole.currentRole === 'Administrador'">
+        <label> Seleccione el tipo de usuario </label>
+        <select class='form-control' [(ngModel)]="selRole" formControlName="selectedUserRole">
+          <option *ngFor="let avr of adminValidRoles" value={{avr}}>{{avr}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label> Ingrese los datos del {{this.selRole}}</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Alias" formControlName="alias" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Nombre y apellidos" formControlName="fullName"
+          required>
+      </div>
+      <div class="form-group">
+        <input type="number" min=0 class="form-control input-create" placeholder="Cedula" formControlName="id" required>
+      </div>
+      <div class="form-group">
+        <input type="number" min=0 class="form-control input-create" placeholder="Numero de telefono"
+          formControlName="phoneNumber" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Direccion" formControlName="address" required>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control input-create" placeholder="Correo" formControlName="email" required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-create" placeholder="Contraseña" formControlName="password"
+          required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-create" placeholder="Repetir contraseña"
+          formControlName="passwordConfirm" required>
+      </div>
+      <div *ngIf="currentRole.validRole === 'Participante'">
+        <div class="form-group">
+          <label> Datos de la tarjeta de credito</label>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label> Numero de tarjeta</label>
+          <input type="text" class="form-control inl" placeholder=" " formControlName="numCredCard">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label> CVC</label>
+          <input type="number" class="form-control inl" placeholder=" " formControlName="cvc">
+        </div>
+      </div>
+      <div class="modal-footer center-div">
+        <button class="btn btn-danger center-div" type="submit" [disabled]="!this.validateForm ()"> Confirmar</button>
+      </div>
+    </form>
+  </div>
+</div>

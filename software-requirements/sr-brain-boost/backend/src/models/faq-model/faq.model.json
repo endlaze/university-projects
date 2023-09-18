@@ -1,0 +1,21 @@
+{
+  "name": "FAQ",
+  "base": "PersistedModel",
+  "plural": "FAQ",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+<div class="home-container">
+  <section class="card-padding banner-area bg-transparent">
+    <div class="card main-card center borderless bg-transparent">
+      <h1>Preguntas frecuentes (FAQ)</h1>
+      <p>
+        En este apartado puedes encontrar las preguntas más comunes acerca de Brain-Boost que nuestros
+        usuarios
+        han formulado. Si tienes una pregunta que no se encuentra en este apartado, ponte en contacto con nosotros
+      </p>
+    </div>
+    <div class="card main-card center bg-transparent shadow p-3 mb-5">
+      <div *ngFor="let questionObj of faq; let i = index" class="card border-dark mb-2">
+        <div class="card-header unselectable card-header-color " (click)="toggleQuestion(questionObj.id)">
+          <h5 class="text-white">
+            {{questionObj.question}}
+            <i class="material-icons right unselectable" *ngIf="!questionObj.selected">expand_more</i>
+            <i class="material-icons right unselectable" *ngIf="questionObj.selected">expand_less</i>
+          </h5>
+        </div>
+        <div class="card-body text-dark" *ngIf="questionObj.selected"
+          [ngClass]="{ 'borderless': !questionObj.selected }">
+          <p class="card-text">{{questionObj.answer}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

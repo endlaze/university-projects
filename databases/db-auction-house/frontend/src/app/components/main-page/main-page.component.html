@@ -1,0 +1,5 @@
+<app-app-nav></app-app-nav>
+<button *ngIf="roles.currentRole === 'Administrador' || roles.currentRole === 'Agente'"
+    (click)="goToRoute('create-user')">
+    Crear {{roles.validRole}}
+</button>

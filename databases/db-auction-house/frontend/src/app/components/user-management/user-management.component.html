@@ -1,0 +1,17 @@
+<app-app-nav></app-app-nav>
+<div>
+    <div class="modal-header center-title">
+        <button class="center-div btn btn-success" (click)="goToRoute('create-user')">Crear usuario </button>
+    </div>
+    <table id="customers">
+        <tr>
+            <th>Alias</th>
+            <th>Estado</th>
+        </tr>
+        <tr *ngFor="let usr of users">
+            <td (click)="updateUser(usr)">{{usr.Alias}}</td>
+            <td *ngIf="usr.Suspendido" (click)="changeUserStatus(usr)" class="banned-user">Inactivo</td>
+            <td *ngIf="!usr.Suspendido" (click)="changeUserStatus(usr)" class="active-user">Activo</td>
+        </tr>
+    </table>
+</div>

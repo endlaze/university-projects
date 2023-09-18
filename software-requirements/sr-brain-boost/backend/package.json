@@ -1,0 +1,39 @@
+{
+  "name": "brain-boost-backend",
+  "version": "1.0.0",
+  "main": "src/server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && npm audit"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "compression": "^1.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "helmet": "^3.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-postgresql": "^3.7.0",
+    "mongodb": "^3.3.2",
+    "nodemailer": "^6.3.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "brain-boost-backend"
+}

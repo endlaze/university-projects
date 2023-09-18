@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="nav-bar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-component"
+    aria-controls="navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar-component">
+    <ul class="navbar-nav mr-auto">
+      <li *ngFor="let route of routes" class="nav-item " [ngClass]="{'bold-font': isActive(route.path)}">
+        <a routerLink="{{route.path}}" class="nav-link text-dark">{{route.name}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

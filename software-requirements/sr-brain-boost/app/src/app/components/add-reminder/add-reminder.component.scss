@@ -1,0 +1,20 @@
+ $blue-background: #2d82c5;
+
+
+ .blue-component {
+     background-color: $blue-background;
+ }
+
+ .submit-button {
+     font-weight: bold;
+     --border-radius: 0%;
+     --background: $blue-background;
+ }
+
+ .font-label {
+     font-weight: bold;
+ }
+
+ .font-size-1 {
+     font-size: 1em;
+ }

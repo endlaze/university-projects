@@ -1,0 +1,14 @@
+<div class="nav-bar">
+    <button (click)="showNewPizzaPage()" class="nav-element">Crear una pizza</button>
+    <button (click)="showSaladsPage()" class="nav-element">Elegir ensalada</button>
+    <button (click)="showDrinksPage()" class="nav-element">Elegir bebida</button>
+    <button (click)="showStoreRegister()" class="nav-element">Registrar un local</button>
+</div>
+<div>
+    <h2>Seleccione un local</h2>
+    <select [ngModel]="store" (ngModelChange)="onStoreChange($event)" name="pizzaSize">
+        <option [value]="st.IdPuntoVenta" *ngFor="let st of stores">{{st.Nombre}}</option>
+    </select>
+
+</div>
+<button (click)="registerOrder()">Finalizar orden</button>

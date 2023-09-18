@@ -1,0 +1,69 @@
+<div class="modal-content center-div">
+    <div>
+        <div class="modal-header center-title">
+          <h5>Pizzas predeterminadas:</h5>
+          <select [ngModel]="stockPizzaId" (ngModelChange)="onStockPizzaChange($event)" name="pizzaSize">
+            <option [value]="pizzaStock.pizza.IdPizzaStock" *ngFor="let pizzaStock of stockPizzas">{{pizzaStock.pizza.Nombre}}</option>
+          </select>
+        </div>
+      </div>
+  <div>
+    <div class="modal-header center-title">
+      <h5>Seleccione el tamaño:</h5>
+      <select [ngModel]="pizzaSize" (ngModelChange)="onSizeChange($event)" name="pizzaSize">
+        <option [value]="size.IdTamPizzaStock" *ngFor="let size of pizzaSizes">{{size.Tam}}</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="modal-header center-title">
+      <h5>Seleccione un saborizante:</h5>
+      <select [ngModel]="flavoring" (ngModelChange)="onFlavoringChange($event)" name="flavoring">
+        <option [value]="flavor.IdSaborizante" *ngFor="let flavor of stockFlavoring">{{flavor.Nombre}}</option>
+      </select>
+    </div>
+  </div> 
+  <div>
+    <div class="modal-header center-title">
+      <h5>Seleccione los ingredientes</h5>
+    </div>
+    <div class="center">
+      <div class='grid-container'>
+        <div *ngFor="let ing of stockIng" id="{{ing.IdIngrediente}}" class="grid-item" (click)="changeIngState (ing)">
+          <label> {{ing.Nombre}} </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div *ngFor="let ingredient of pizzaIngredients">
+      <label>{{ingredient.Nombre}}</label>
+      <select [ngModel]="ingredient.selector" (ngModelChange)="onChange($event, ingredient)" name="ingredient.selector">
+        <option [value]="option.number" *ngFor="let option of selectOptions">{{option.name}}</option>
+      </select>
+      <input type="number" min=1 (input)="onCantidadChange($event.target.value, ingredient)" value = 1>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <label>Precio individual: </label><label> {{price}}</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <label>Cantidad de pizzas</label><input type="number" min=1 [(ngModel)]="Cantidad">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button (click)="savePizza()">Confirmar</button>
+    <button (click)="close()">Cancelar</button>
+  </div>
+</div>
+
+<!-- {
+  precio
+  tam
+  cant
+  ing
+  saborizante
+} -->

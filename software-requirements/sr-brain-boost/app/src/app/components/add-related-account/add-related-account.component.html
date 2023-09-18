@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Vincular cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section class="mt-2">
+    <section class="ion-text-center mt-1">
+      <ion-label class="question-label">¿Cómo vincular una cuenta?</ion-label>
+    </section>
+    <section class="ion-text-center mt-1">
+      <ion-label class="answer-label ion-text-wrap mt-1">
+        Para vincularte con otra persona debes ingresar su número de cédula y el token de vinculación de su cuenta
+      </ion-label>
+    </section>
+  </section>
+  <section>
+    <form [formGroup]="relatedAccForm" (ngSubmit)="linkAccount()">
+      <section class="padding-1 padding-top-15">
+        <ion-label class="input-label" position="stacked">Cédula</ion-label>
+        <ion-item lines="full">
+          <ion-icon name="person" class="logo-right-padding"></ion-icon>
+          <ion-input type="text" formControlName="username" placeholder="Ingrese la cédula de la persona">
+          </ion-input>
+        </ion-item>
+      </section>
+      <section class="padding-1">
+        <ion-label class="input-label" position="stacked">Código de vinculación</ion-label>
+        <ion-item lines="full">
+          <ion-icon name="link" class="logo-right-padding"></ion-icon>
+          <ion-input type="text" formControlName="token" placeholder="Ingrese el código de vinculación">
+          </ion-input>
+        </ion-item>
+      </section>
+      <ion-grid class="no-padding-bot">
+        <ion-row class="no-padding-bot ">
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" strong="true" class="submit-button" color="danger" (click)="closeModal()">
+              Cancelar</ion-button>
+          </ion-col>
+          <ion-col class="no-padding-bot ">
+            <ion-button expand="block" strong="true" class="submit-button blue-button" type="submit"
+              [disabled]="!isFormValid()">Vincular</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </section>
+</ion-content>

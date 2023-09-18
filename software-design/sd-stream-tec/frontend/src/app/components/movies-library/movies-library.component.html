@@ -1,0 +1,53 @@
+<app-nav></app-nav>
+<div class="playlist-menu text-white">
+  <div class="pt-1">
+    <label class="playlist-menu-title text-center d-block body-wrapper"><i class="fas fa-film pr-2"></i>
+      Películas </label>
+    <form class="card-body form-inline shadow-lg rounded blue-border m-1" [formGroup]="addPlaylistForm"
+      (ngSubmit)="createPlaylist()" novalidate>
+      <label class="font-weight-bold pb-2" for="formAddPlaylist">Crear nueva playlist</label>
+      <div class="form-group">
+        <input type="text" class="form-control" id="formAddPlaylist" formControlName="name" placeholder="Nombre"
+          (keyup)="changeBtnStatus($event.target.value)">
+        <button type="submit" [disabled]="addPlaylistDisabled" class="btn btn-primary btn-lg ml-2 mr-5"><i
+            class="fas fa-plus text-white"></i></button>
+      </div>
+    </form>
+    <label class="font-weight-bold pl-4" for="formAddPlaylist">Tus playlists</label>
+    <label class="text-truncate playlist-menu-label pl-4 d-block " *ngFor="let playlist of this.userVideoPlaylists "
+      (click)="setCurrentPlaylist(playlist)">{{playlist.name}}</label>
+  </div>
+</div>
+<div class="playlist-content text-white">
+  <div class="page-title text-white body-wrapper">
+    <div>
+      <h1 class="font-weight-bold">
+        <span *ngIf="this.selectedPlaylist.videos.length === 0"> No tienes películas agregadas a esta
+          playlist</span>
+        <span *ngIf="this.selectedPlaylist.videos.length !== 0"> Películas agregadas</span>
+      </h1>
+      <div class="page-subtitle font-weight-bold pt-2" *ngIf="this.selectedPlaylist.videos.length === 0">Debes
+        ingresar al catálogo para agregar una nueva
+        película.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row p-5 center playlist-content" *ngIf="this.selectedPlaylist.videos.length !== 0">
+  <div class="col center pr-5, pl-5 mb-5 mw-220 zoom " *ngFor="let movie of this.selectedPlaylist.videos">
+    <div class="text-center">
+      <div>
+        <img class="cover" src="{{movie.cover}}">
+      </div>
+      <div class="w-200 bg-white pt-2 pb-2 mh-86">
+        <label class="text-dark pl-2 pr-2  fs-13">{{movie.title}}</label>
+      </div>
+      <div class="w-200 bg-white pt-2 pb-2">
+        <label class="text-dark pt-1 ">{{movie.gender}}</label>
+      </div>
+      <div class="w-200 bg-danger center unselectable">
+        <label class=" text-white font-weight-bold pt-3"><i class="fas fa-play"></i> Reproducir</label>
+      </div>
+    </div>
+  </div>
+</div>

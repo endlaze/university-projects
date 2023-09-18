@@ -1,0 +1,62 @@
+<app-nav></app-nav>
+<div class="playlist-menu text-white">
+  <div class="pt-1">
+    <label class="playlist-menu-title text-center d-block body-wrapper"><i class="fas fa-music pr-2"></i>
+      Música </label>
+    <form class="card-body form-inline shadow-lg rounded blue-border m-1" [formGroup]="addPlaylistForm"
+      (ngSubmit)="createPlaylist()" novalidate>
+      <label class="font-weight-bold pb-2" for="formAddPlaylist">Crear nueva playlist</label>
+      <div class="form-group">
+        <input type="text" class="form-control" id="formAddPlaylist" formControlName="name" placeholder="Nombre"
+          (keyup)="changeBtnStatus($event.target.value)">
+        <button type="submit" [disabled]="addPlaylistDisabled" class="btn btn-primary btn-lg ml-2 mr-5"><i
+            class="fas fa-plus text-white"></i></button>
+      </div>
+    </form>
+    <label class="font-weight-bold pl-4" for="formAddPlaylist">Tus playlisits</label>
+    <label class="text-truncate playlist-menu-label pl-4 d-block" *ngFor="let playlist of this.userMusicPlaylists"
+      (click)="setCurrentPlaylist(playlist)">{{playlist.name}} </label>
+  </div>
+</div>
+<div class="playlist-content text-white">
+  <div class="page-title text-white body-wrapper">
+    <div>
+      <h1 class="font-weight-bold">
+        <span *ngIf="this.selectedPlaylist.tracks.length === 0"> No tienes canciones agregadas a esta
+          playlist</span>
+        <span *ngIf="this.selectedPlaylist.tracks.length !== 0"> Canciones agregadas</span>
+      </h1>
+      <div class="page-subtitle font-weight-bold pt-2" *ngIf="this.selectedPlaylist.tracks.length === 0">Debes
+        ingresar al catálogo para agregar una nueva
+        película.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="playlist-content bg-white" *ngIf="this.selectedPlaylist.tracks.length !== 0">
+  <table class="table body-wrapper">
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th class="text-oxford">Título</th>
+        <th class="text-oxford">Artista</th>
+        <th class="text-oxford">Album</th>
+        <th class="text-oxford">Duración</th>
+        <th class="text-oxford"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let track of this.selectedPlaylist.tracks">
+      <tr>
+        <td class="img-size">
+          <img class="shadow img-size" src="{{track.cover}}">
+        </td>
+        <td class="">{{track.trackTitle}}</td>
+        <td class="">{{track.albumArtist}}</td>
+        <td class="">{{track.albumTitle}}</td>
+        <td class="">{{track.length}}</td>
+        <td class="">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+.borderless {
+    border: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.web-img {
+    width: 10em;
+    height: 10em;
+}
+
+.rounded-img {
+    border-radius: 10%;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.banner-icon {
+    font-size: 6em;
+    color: white;
+    padding: 0.25em
+}

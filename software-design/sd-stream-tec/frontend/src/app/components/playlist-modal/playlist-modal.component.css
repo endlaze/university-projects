@@ -1,0 +1,10 @@
+
+
+  .playlist li:hover {
+    background: #456789;
+    color: white;
+  }
+
+  .modal-title {
+      background: --oxford-blue;
+  }

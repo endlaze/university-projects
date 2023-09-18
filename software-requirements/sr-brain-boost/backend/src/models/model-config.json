@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "CompanyInfo": {
+    "dataSource": "postgreDS",
+    "public": true
+  },
+  "FAQ": {
+    "dataSource": "postgreDS",
+    "public": true
+  },
+  "app_user": {
+    "dataSource": "postgreDS",
+    "public": true
+  },
+  "stock_roles": {
+    "dataSource": "postgreDS",
+    "public": true
+  },
+  "stock_subroles": {
+    "dataSource": "postgreDS",
+    "public": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

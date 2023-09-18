@@ -1,0 +1,22 @@
+<ion-menu type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="ion-text-center">Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <section *ngFor="let p of appPages">
+        <ion-item disabled="{{p.disabled}}" [routerDirection]="'root'" [routerLink]="[p.url]" lines="full">
+          <ion-icon slot="start" [name]="p.icon" class="menu-icon"></ion-icon>
+          <ion-label> {{p.title}} </ion-label>
+        </ion-item>
+      </section>
+      <ion-item lines="full" (click)="logout()">
+        <ion-icon slot="start" [name]="'exit'"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>

@@ -1,0 +1,45 @@
+<app-nav></app-nav>
+ 
+<section class="body-wrapper">
+  <div class="page-title text-white">
+    <h1 class="font-weight-bold" >Ingresa a StreamTEC</h1>
+    <div class="page-subtitle font-weight-bold pt-2">Ingresa tus credenciales para disfritar de tu contenido multimedia favorito.</div>
+  </div>
+  <div class="center pt-4 pb-5">
+    <div class="card p-0  rounded-left common-form-wrapper">
+      <form class="card-body shadow-lg rounded blue-border m-1" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+        <!--Email-->
+        <div class="form-group">
+          <label class="font-weight-bold" for="formEmail">Correo electrónico</label>
+          <input type="email" class="form-control" id="formEmail" formControlName="email"
+            placeholder="Ingresa tu correo electónico" [ngClass]="{ 'is-invalid': submitted && form.email.errors }">
+          <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+            <div *ngIf="form.email.errors.required">
+                <label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo correo es obligatorio</label>
+            </div>
+            <div *ngIf="form.email.errors.pattern"><label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> Ingrese un correo válido</label></div>
+          </div>
+        </div>
+        <!--Password-->
+        <div class="form-group pb-0">
+          <label class="font-weight-bold" for="formPassword">Contraseña</label>
+          <input type="password" class="form-control" id="formPassword" formControlName="password"
+            placeholder="Ingresa tu correo electónico" [ngClass]="{ 'is-invalid': submitted && form.password.errors }">
+          <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+            <div *ngIf="form.password.errors.required">
+              <label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo contraseña es obligatorio</label>
+            </div>
+          </div>
+        </div>
+        <!--Password-->
+        <div class="form-group pt-0">
+          <label class="font-w-1 font-weight-bold indigodye-font-color"> <a class="indigodye-font-color" href="#">¿Olvidaste tu contraseña?</a></label> <br>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+        <div class="form-group text-center pb-0">
+          <label class="font-weight-bold pt-4">¿No tienes una cuenta? <a class="indigodye-font-color" href="plans">Regístrate.</a></label> 
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

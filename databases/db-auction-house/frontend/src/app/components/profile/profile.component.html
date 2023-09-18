@@ -1,0 +1,70 @@
+<app-app-nav></app-app-nav>
+<div>
+  <div>
+    <h1>Historial de
+      <span *ngIf="this.currentActor === 'seller'">subastas del usuario {{vendor.Alias}}</span>
+      <span *ngIf="this.currentActor === 'buyer'">pujas del usuario {{buyer.Alias}}</span> </h1>
+  </div>
+  <div>
+    <table *ngIf="this.currentActor === 'seller'">
+      <tr>
+        <th>Fecha Vendida</th>
+        <th>Item</th>
+        <th>Descripcion</th>
+        <th>Precio base</th>
+        <th>Precio vendido</th>
+        <th>Comentario</th>
+      </tr>
+      <tr *ngFor=" let auction of userAuctions">
+        <td>{{toDate(auction.FechaFinal)| date:'mediumDate'}}</td>
+        <td>{{auction.Nombre}}</td>
+        <td>{{auction.Descripcion}}</td>
+        <td>{{auction.PrecioBase}}</td>
+        <td>{{auction.PrecioFinal}}</td>
+        <td>{{auction.Comentario}}</td>
+    </table>
+
+    <table *ngIf="this.currentActor === 'buyer'">
+      <tr>
+        <th>Fecha puja</th>
+        <th>Item</th>
+        <th>Descripcion</th>
+        <th>Precio base</th>
+        <th>Precio ofecido</th>
+        <th>Comentario</th>
+      </tr>
+      <tr *ngFor=" let bid of userBids">
+        <td>{{toDate(bid.FechaFinal)| date:'mediumDate'}}</td>
+        <td>{{bid.Nombre}}</td>
+        <td>{{bid.Descripcion}}</td>
+        <td>{{bid.PrecioBase}}</td>
+        <td>{{bid.PrecioFinal}}</td>
+        <td>{{bid.Comentario}}</td>
+    </table>
+  </div>
+
+</div>
+
+
+
+
+<!-- 
+<table>
+  <tr>
+    <th>Usuario que realiza subasta</th>
+    <th>Nombre de subasta</th>
+    <th>Descripcion de subasta</th>
+    <th>Precio base de subasta</th>
+    <th>Expira</th>
+    <th colspan="2">Accion</th>
+  </tr>
+  <tr *ngFor="let auction of auctions">
+    <td (click)="goToProfile(auction.Alias)">{{auction.Alias}}</td>
+    <td>{{auction.Nombre}}</td>
+    <td>{{auction.Descripcion}}</td>
+    <td>{{auction.PrecioBase}}</td>
+    <td>{{ toDate(auction.FechaFinal) }}</td>
+    <td><button (click)="goToBids(auction.IdSubasta)">Ver pujas</button></td>
+    <td><button (click)="goToCreateBid(auction.IdSubasta)">Pujar</button></td>
+  </tr>
+</table> -->

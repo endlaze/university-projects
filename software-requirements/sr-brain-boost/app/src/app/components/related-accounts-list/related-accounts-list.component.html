@@ -1,0 +1,37 @@
+<ion-content>
+  <section class="flex-content add-section">
+    <ion-searchbar placeHolder="Buscar cuenta" class="padd-1"></ion-searchbar>
+    <ion-button class="add-button padd-1" strong="true" (click)="openAddAccModal()"
+      *ngIf="this.userRole.role_id !== 1 ">
+      <ion-icon name="person-add" class="add-button-icon add-button-icon"> </ion-icon>
+      <span class="add-button-icon">Agregar</span>
+    </ion-button>
+  </section>
+  <section>
+    <ion-list>
+      <ion-list-header class="blue-component">
+        <ion-card-subtitle color="light" class="header-font-size">Lista de cuentas asociadas</ion-card-subtitle>
+      </ion-list-header>
+      <section *ngIf = 'this.isDataLoaded'>
+        <ion-item *ngFor="let acc of linkedAccounts" lines = "full">
+            <ion-avatar slot="start">
+                <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjYzVkYmZmIiBkPSJNMCAwaDUxMnY1MTJIMHoiLz48cGF0aCBkPSJNMjU2IDMwNGM2MS42IDAgMTEyLTUwLjQgMTEyLTExMlMzMTcuNiA4MCAyNTYgODBzLTExMiA1MC40LTExMiAxMTIgNTAuNCAxMTIgMTEyIDExMnptMCA0MGMtNzQuMiAwLTIyNCAzNy44LTIyNCAxMTJ2NTZoNDQ4di01NmMwLTc0LjItMTQ5LjgtMTEyLTIyNC0xMTJ6IiBmaWxsPSIjODJhZWZmIi8+PC9zdmc+" />          
+            </ion-avatar>
+            <ion-label>
+              <p class="bold-label">{{acc.name}} {{acc.first_last_name}} {{acc.second_last_name}}</p>
+              <p><span class="bold-label">Correo: </span><span>{{acc.email}}</span></p>
+              <p><span class="bold-label">Teléfono: </span><span>{{acc.phone_number}}</span></p>
+              <p *ngIf = "acc.user_role.role_id !== 1"><span class="bold-label"> Roles: </span> | <span *ngFor = 'let subrole of acc.user_subroles'>{{subrole.subrole_desc}} | </span></p>
+              <p *ngIf = "acc.user_role.role_id === 1"><span class="bold-label"> Rol: </span><span>{{acc.user_role.role_desc}}</span></p>
+            </ion-label>
+          </ion-item>
+        </section>
+    </ion-list>
+  </section>
+
+  <section>
+
+  </section>
+
+</ion-content>

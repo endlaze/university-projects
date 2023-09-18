@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<div class="home-container">
+  <section class="card-padding banner-area bg-transparent">
+    <div class="card main-card center borderless bg-transparent">
+      <h1>Contacto</h1>
+      <p>
+        Mediante este formulario puedes realizar alguna consulta que no se encuentre en el apartado de
+        Preguntas Frecuentes (FAQ)
+      </p>
+    </div>
+    <div class="card main-card center shadow p-3 mb-5">
+      <div class="card-body borderless">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+          <!--Name-->
+          <div class="form-group">
+            <h6 for="formName">Nombre</h6>
+            <input type="text" class="form-control" id="formName" formControlName="name" placeholder="Digite su nombre"
+              [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+            <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+              <div *ngIf="form.name.errors.required">El campo nombre es obligatorio</div>
+            </div>
+          </div>
+          <!--Email-->
+          <div class="form-group">
+            <h6 for="formEmail">Correo</h6>
+            <input type="email" class="form-control" id="formEmail" formControlName="email"
+              placeholder="Digite su correo" [ngClass]="{ 'is-invalid': submitted && form.email.errors }">
+            <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+              <div *ngIf="form.email.errors.required">El campo correo es obligatorio</div>
+              <div *ngIf="form.email.errors.email">Ingrese un correo válido</div>
+            </div>
+          </div>
+          <!--Message-->
+          <div class="form-group">
+            <h6 for="formMessage">Mensaje</h6>
+            <textarea type="text" class="form-control" id="formMessage" formControlName="message"
+              placeholder="Digite su mensaje" [ngClass]="{ 'is-invalid': submitted && form.message.errors }"></textarea>
+            <div *ngIf="submitted && form.message.errors" class="invalid-feedback">
+              <div *ngIf="form.message.errors.required">El campo mensaje es obligatorio</div>
+            </div>
+          </div>
+          <button type="submit" class="btn submit-button text-white">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,74 @@
+<app-nav></app-nav>
+
+<div class="body-wrapper">
+    <div class="page-title text-white">
+        <h1 class="font-weight-bold" >Crea tu cuenta</h1>
+        <div class="page-subtitle font-weight-bold pt-2">Utiliza tu correo electrónico para disfrutar de una gran variedad de contenido multimedia.</div>
+    </div>
+
+    <div class="center pt-4">
+          <div class="card  p-0 borderless rounded-left common-form-wrapper">
+        
+            <form class="card-body shadow-lg rounded blue-border m-1" [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+              <!--Name-->
+              <div class="form-group">
+                <label class="font-weight-bold" for="formName">Nombre completo</label>
+                <input type="text" class="form-control" id="formName" formControlName="name" placeholder="Ingresa tu nombre"
+                  [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+                <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+                  <div *ngIf="form.name.errors.required"><label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo nombre es obligatorio</label></div>
+                </div>
+              </div>
+              <!--Email-->
+              <div class="form-group">
+                <label class="font-weight-bold" for="formEmail">Correo electrónico</label>
+                <input type="email" class="form-control" id="formEmail" formControlName="email"
+                  placeholder="Ingresa tu correo electónico" [ngClass]="{ 'is-invalid': submitted && form.email.errors }">
+                <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+                  <div *ngIf="form.email.errors.required">
+                      <label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo correo es obligatorio</label>
+                  </div>
+                  <div *ngIf="form.email.errors.pattern"><label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> Ingrese un correo válido</label></div>
+                </div>
+              </div>
+              <!--Password-->
+              <div class="form-group">
+                <label class="font-weight-bold" for="formPassword">Contraseña</label>
+                <input type="password" class="form-control" id="formPassword" formControlName="password"
+                  placeholder="Ingresa tu correo electónico" [ngClass]="{ 'is-invalid': submitted && form.password.errors }">
+                <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+                  <div *ngIf="form.password.errors.required">
+                    <label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo contraseña es obligatorio</label>
+                  </div>
+                  <div *ngIf="form.password.errors.pattern">
+                    <label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> La contraseña debe contener como mínimo:
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Entre 8 y 12 dígitos, un número, una letra minúscula, una letra mayúscula y un caracter especial.
+                    </label>
+                  </div>
+                </div>
+                </div>
+              <!--Phone-->
+              <div class="form-group">
+                <label class="font-weight-bold" for="formPhone">Teléfono</label>
+                <input type="number" class="form-control" id="formPhone" formControlName="phone"
+                  placeholder="Ingresa tu número telefónico" [ngClass]="{ 'is-invalid': submitted && form.phone.errors }">
+                <div *ngIf="submitted && form.phone.errors" class="invalid-feedback">
+                  <div *ngIf="form.phone.errors.required"><label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo teléfono es obligatorio</label></div>
+                </div>
+              </div>
+              <!--Birthdate-->
+              <div class="form-group">
+                <label class="font-weight-bold" for="formBirthdate">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="formBirthdate" formControlName="birthdate"
+                  placeholder="Ingresa tu " [ngClass]="{ 'is-invalid': submitted && form.birthdate.errors }">
+                <div *ngIf="submitted && form.birthdate.errors" class="invalid-feedback">
+                  <div *ngIf="form.birthdate.errors.required"><label class="font-weight-bold"><i class="fas fa-exclamation-circle"></i> El campo fecha de nacimiento es obligatorio</label></div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+            </form>
+      </div>
+    </div>
+    
+
+</div>

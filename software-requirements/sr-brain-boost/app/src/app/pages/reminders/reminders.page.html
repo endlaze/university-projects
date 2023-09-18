@@ -1,0 +1,44 @@
+<app-sidemenu></app-sidemenu>
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button class="btn-common-color"></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">Recordatorios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <!-- fab placed in the bottom center of the content with a list on each side -->
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="openReminderModal()" class="fab-button">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <!-- List of Sliding Items -->
+
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-justify-content-center bottom-border" nowrap *ngFor="let reminder of reminders">
+        <ion-col size="0.6" class="ion-align-self-center pl">
+          <ion-checkbox (ionChange)="deleteReminder(reminder.rem_id)"></ion-checkbox>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>
+              <h3 class="reminder-title">{{reminder.rem_title}}</h3>
+              <p class="ion-text-wrap reminder-desc"><span class="bold">Descripción: </span> {{reminder.rem_desc}} </p>
+              <p class="reminder-desc"><span class="bold">Fecha: </span>{{reminder.rem_date | date: "mediumDate"}}</p>
+              <p class="reminder-desc"><span class="bold">Hora: </span>{{reminder.rem_time| date: "shortTime"}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col class="ion-align-self-center" size="1.5">
+          <ion-icon class="icon-color" name="create" size="large"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</div>

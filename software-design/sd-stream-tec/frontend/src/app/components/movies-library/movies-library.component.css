@@ -1,0 +1,79 @@
+/* The side navigation menu */
+.playlist-menu {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20rem; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .playlist-menu-label {
+    font-size: 1.1rem;
+    color: #818181;
+  }
+
+  .playlist-menu-title {
+      font-size: 2em;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .playlist-menu label:hover {
+    color: #f1f1f1;
+  }
+
+  .playlist-content{
+      margin-left: 20rem ;
+      padding: 0px 10px;
+  }
+
+  .cover {
+    max-height: 288px;
+    min-width: 200px;
+}
+
+.w-200 {
+    width: 200px
+}
+
+.mw-200{
+    max-width: 200px;
+}
+
+.mw-220{
+    max-width: 220px;
+}
+
+  .zoom{
+    transition: transform .2;
+  } 
+  .zoom:hover {
+    transform: scale(1.05);
+    border: 0;
+  }
+
+  .fs-13{
+    font-size: 1.3rem;
+  }
+  
+  .mh-86 {
+      min-height: 86px;
+  }
+
+  .unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.media-title {
+  text-align: left;
+  padding: 10px 10px 30px;   
+}

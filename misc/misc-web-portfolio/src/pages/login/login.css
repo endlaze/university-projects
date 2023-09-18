@@ -1,0 +1,13 @@
+.form-width {
+  width: 50%;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand font-weight-bold blue-font" href="#">StreamTEC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto pr-5">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Catálogo
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="movies">Películas</a>
+          <a class="dropdown-item" href="music">Música</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" *ngIf="this.checkLoggedIn()">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Biblioteca
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/movies-library">Películas</a>
+          <a class="dropdown-item" href="music-library">Música</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" *ngIf="this.checkLoggedIn()">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Usuario
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" (click)="logOut()" *ngIf="this.checkLoggedIn()">Cerrar sesión</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="!this.checkLoggedIn()">
+        <a class="nav-link" href="/plans">Membresías</a>
+      </li>
+      <li class="nav-item" *ngIf="!this.checkLoggedIn()">
+        <a class="nav-link" href="/login">Iniciar sesión</a>
+      </li>
+    </ul>
+  </div>
+</nav>

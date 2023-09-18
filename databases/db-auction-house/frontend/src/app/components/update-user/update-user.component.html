@@ -1,0 +1,45 @@
+<app-app-nav></app-app-nav>
+<div class="modal-content">
+  <div class="modal-header center-title">
+    <h3 class="center-div">Actualizar {{currentRole.validRole}}</h3>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-horizontal user-form modal-body">
+      <div class="form-group">
+        <label> Ingrese los datos del {{currentRole.validRole}}</label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Alias" maxlength="20" formControlName="alias"
+          required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Nombre y apellidos" maxlength="20"
+          formControlName="fullName" required>
+      </div>
+      <div class="form-group">
+        <input type="number" min=0 class="form-control input-create" placeholder="Numero de telefono" maxlength="8"
+          formControlName="phoneNumber" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Direccion" maxlength="50"
+          formControlName="address" required>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control input-create" placeholder="Correo" maxlength="20"
+          formControlName="email" required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-create" placeholder="Contraseña" maxlength="20"
+          formControlName="password">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-create" placeholder="Repetir contraseña" maxlength="20"
+          formControlName="passwordConfirm">
+      </div>
+      <div class="modal-footer ">
+        <button *ngIf="currentRole.validRole === 'Participante'" class="btn btn-success" (click)="showCreditModal()">Modificar tarjeta</button>
+        <button class="btn btn-danger center-div" type="submit" > Confirmar</button>
+      </div>
+    </form>
+  </div>
+</div>

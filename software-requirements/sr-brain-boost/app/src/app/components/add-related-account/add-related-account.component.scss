@@ -1,0 +1,82 @@
+$blue-background: #2d82c5;
+
+
+.center-text {
+  text-align: center;
+}
+
+.blue-component {
+  background-color: $blue-background;
+}
+
+.blue-button {
+  --background: #2d82c5;
+}
+
+.input-label {
+  padding: 1.1em;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.margin-top-1 {
+  margin-top: 2em
+}
+
+.margin-top-2 {
+  margin-top: 2em;
+}
+
+.prof-font-size {
+  font-size: 0.91em;
+}
+
+.grid-label {
+  display: grid;
+}
+
+.no-padding-bot {
+  padding-bottom: 0%
+}
+
+.padding-1 {
+  padding: 0.6em;
+}
+
+.padding-left-1 {
+  padding-left: 1em;
+}
+
+.logo-right-padding {
+  padding-right: 0.5em
+}
+
+.padding-top-15 {
+  padding-top: 1.5em;
+}
+
+.question-label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.answer-label {
+  font-size: 1.2em;
+}
+
+.center {
+  justify-content: center;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.margin-1 {
+  margin: 1em
+}
+
+.mt-2 {
+  margin-top: 2em;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "muebleria-backend",
+  "version": "1.0.0",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/app.js"
+  },
+  "author": "Andres Sanchez",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.19",
+    "mysql": "^2.18.1",
+    "tedious": "^9.1.0",
+    "tedious-connection-pool": "^1.0.5"
+  },
+  "type": "module"
+}

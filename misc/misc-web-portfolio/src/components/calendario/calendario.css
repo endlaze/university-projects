@@ -1,0 +1,23 @@
+.cal-header {
+  display: inline-flex;
+}
+
+#calendario {
+  border-radius: 5em;
+}
+
+#calendario th, td{
+  padding: 1em;
+}
+
+#calendario table {
+    margin: auto;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.justify-center {
+  justify-content: center;
+}

@@ -1,0 +1,6 @@
+<div class="topnav">
+  <a href="auctions">Subastas</a>
+  <a href="user-management" *ngIf="this.currentUser.role !== 'Participante'"> Manejo de usuarios</a>
+  <a href="my-profile" *ngIf="this.currentUser.role === 'Participante'"> Mi perfil</a>
+  <a (click)="showParamsModal()" *ngIf="this.currentUser.role === 'Administrador'"> Parámetros</a>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "CompanyInfo",
+  "base": "PersistedModel",
+  "plural": "CompanyInfo",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mission_statement": {
+      "type": "string"
+    },
+    "vision_statement": {
+      "type": "string"
+    },
+    "support_email": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

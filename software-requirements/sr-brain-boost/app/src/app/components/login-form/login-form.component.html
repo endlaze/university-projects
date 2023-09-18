@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <ion-card class="card-section login-card">
+    <section>
+      <ion-label class="card-label" position="stacked">Cédula o Email</ion-label>
+      <ion-item lines="full">
+        <ion-icon name="person" class="logo-right-padding"></ion-icon>
+        <ion-input type="text" class="left-padding" formControlName="username" placeholder="Ingrese la cédula o email">
+        </ion-input>
+      </ion-item>
+    </section>
+    <section class="margin-top-1">
+      <ion-label class="card-label" position="stacked">Contraseña</ion-label>
+      <ion-item lines="full">
+        <ion-icon name="lock" class="logo-right-padding"></ion-icon>
+        <ion-input type="password" class="left-padding" formControlName="password" placeholder="Ingrese la contraseña">
+        </ion-input>
+      </ion-item>
+    </section>
+    <ion-grid class="no-padding-bot">
+      <ion-row class="no-padding-bot ">
+        <ion-col class="no-padding-bot ">
+          <ion-button expand="block" strong="true" class="blue-component submit-button" type="submit"
+            [disabled]="!isFormValid()">
+            Entrar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</form>

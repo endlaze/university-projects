@@ -1,0 +1,42 @@
+<app-app-nav></app-app-nav>
+<div class="modal-content fixed-top">
+  <div class="modal-header center-title">
+    <h3 class="center-div">Crear Subasta</h3>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="auctionForm" (ngSubmit)="onSubmit()" class="form-horizontal user-form modal-body">
+      <div class="form-group">
+        <label> Ingrese los datos de la subasta</label>
+      </div>
+      <div class="form-group">
+        <select class="form-control" formControlName="category" (change)="updateSubCategories()">
+          <option *ngFor="let cat of categories" [value]="cat"> {{cat}} </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class='form-control' formControlName="subCategory">
+          <option *ngFor="let sub of subCategories" [value]=sub.IdSubcategoria>{{sub.Subcategoria}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Nombre" maxlength="20" formControlName="name"
+          required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-create" placeholder="Descripcion" maxlength="70"
+          formControlName="description" required>
+      </div>
+      <div class="form-group">
+        <input type="number" min=0 class="form-control input-create" placeholder="Precio base" maxlength="9"
+          formControlName="basePrice" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Fecha final</label>
+        <input id="date" type="datetime-local" class="form-control input-create" formControlName="finalDate" required>
+      </div>
+      <div class="modal-footer center-div">
+        <button class="btn btn-danger center-div" type="submit"> Confirmar</button>
+      </div>
+    </form>
+  </div>
+</div>

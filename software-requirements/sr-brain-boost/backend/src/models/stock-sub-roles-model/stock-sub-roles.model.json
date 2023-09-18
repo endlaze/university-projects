@@ -1,0 +1,25 @@
+{
+    "name": "stock_subroles",
+    "base": "PersistedModel",
+    "plural": "stock_subroles",
+    "idInjection": false,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "id": true
+        },
+        "stock_role_fk": {
+            "type": "String"
+        },
+        "subrole_desc": {
+            "type": "String"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}

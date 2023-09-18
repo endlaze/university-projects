@@ -1,0 +1,12 @@
+<div>
+    <h1 class="text-center page-title bg-oxford text-white pt-4 pb-4 mb-0">Seleccionar playlist</h1>
+
+    <ul class="list-group playlist">
+        <li class="list-group-item d-flex justify-content-between align-items-center playlist-item:hover unselectable rounded-0"
+            *ngFor="let playlist of this.playlists font-weight-bold"
+            (click)="addProductToPlaylist(playlist, this.product, this.type)">
+            <label class="font-weight-bold ">{{playlist.name}}</label>
+            <!-- <span class="badge badge-pill bg-oxford text-white">{{playlist.videos.length}}</span> -->
+        </li>
+    </ul>
+</div>

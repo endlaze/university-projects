@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Agregar recordatorio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked" class="font-label font-size-1">Título</ion-label>
+    <ion-input placeholder="Ingrese el título del recordatorio" [(ngModel)]="reminderTitle"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked" class="font-label font-size-1">Descripción</ion-label>
+    <ion-textarea placeholder="Ingrese la descripción del recordatorio" [(ngModel)]="reminderDesc"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="font-label">Fecha</ion-label>
+
+    <ion-datetime min="2019-10-18" max="2022" [dayShortNames]="customDayShortNames" displayFormat="DD/MM/YYYY"
+      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Set, Oct, Nov, Dic" [(ngModel)]="date"
+      placeholder="Seleccione la fecha"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="font-label">Hora</ion-label>
+    <ion-datetime display-format="h:mm A" picker-format="h:mm A" [(ngModel)]="time" placeholder="Seleccione la hora">
+    </ion-datetime>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-grid class="no-padding-bot">
+    <ion-row class="no-padding-bot ">
+      <ion-col class="no-padding-bot ">
+        <ion-button expand="block" class="submit-button" color="danger" (click)="closeModal()">Cancelar</ion-button>
+      </ion-col>
+      <ion-col class="no-padding-bot ">
+        <ion-button expand="block" class="submit-button blue-component" (click)="saveReminder()">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
+<!-- <ion-checkbox [(ngModel)]="subrole.checked" [ngModelOptions]="{standalone: true}" -->

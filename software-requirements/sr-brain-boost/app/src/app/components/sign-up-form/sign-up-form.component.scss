@@ -1,0 +1,24 @@
+$blue-background: #2d82c5;
+
+.card-section {
+  border-radius: 0%;
+}
+
+.blue-component {
+  background-color: $blue-background;
+}
+
+.card-label {
+  color: black
+}
+
+.submit-button {
+  color: white !important;
+  --border-radius: 0%;
+  --background: $blue-background;
+}
+
+.center {
+  display: flex;
+  margin: 0 auto;
+}

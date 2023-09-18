@@ -1,0 +1,28 @@
+<app-app-nav></app-app-nav>
+
+<div class="modal-header center-title">
+  <h1 class="center-div ">Mi perfil</h1>
+</div>
+
+
+<div class="modal-body">
+  <div class="modal-header center-title">
+    <h3 >Mis subastas expiradas</h3>
+  </div>
+  <table id="auctions">
+    <tr>
+      <th>Item</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th>Expira</th>
+      <th colspan="1"></th>
+    </tr>
+    <tr *ngFor="let auction of this.myExpiredAuctions">
+      <td>{{auction.Nombre}}</td>
+      <td>{{auction.Descripcion}}</td>
+      <td>{{auction.PrecioBase}}</td>
+      <td>{{formatDate(auction.FechaFinal)}}</td>
+      <td><button class="btn btn-success" (click)="restartAuction(auction)">Reiniciar</button></td>
+    </tr>
+  </table>
+</div>

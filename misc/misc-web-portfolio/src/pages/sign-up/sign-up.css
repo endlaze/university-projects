@@ -1,0 +1,33 @@
+.form-width {
+  width: 50%;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
+
+.tag {
+  padding-left: 1em;
+}
+
+.grid {
+  display: grid;
+}
+
+.padd-0 {
+  padding: 0;
+}

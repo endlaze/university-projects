@@ -1,0 +1,54 @@
+<div class="modal-content center-div">
+  <div>
+    <div class="modal-header center-title">
+      <h5>Ensaladas:</h5>
+      <select [ngModel]="stockSaladId" (ngModelChange)="onStockSaladChange($event)" name="salad">
+        <option [value]="stockSalad.salad.IdEnsaladaStock" *ngFor="let stockSalad of stockSalads">
+          {{stockSalad.salad.Nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class="modal-header center-title">
+      <h5>Tamaño:</h5>
+      <select [ngModel]="saladSize" (ngModelChange)="onSizeChange($event)" name="saladSize">
+        <option [value]="size.IdTamEnsaladaStock" *ngFor="let size of stockSizes">{{size.Tam}}</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <h5>Ingredientes:</h5>
+    <div *ngFor="let ingredient of saladIngredients">
+      <label>{{ingredient.Nombre}}</label>
+      <label>Duplicar: </label>
+      <input type="checkbox" (change)="onDuplicateChange(ingredient)">
+      <button (click)="deleteIngredient(ingredient)">Eliminar</button>
+    </div>
+  </div>
+  <div>
+    <div>
+      <h5>Agregar Pollo: </h5>
+      <input type="checkbox" (change)="onChickenChange()">
+    </div>
+    <div>
+      <h5>Vinagreta:</h5>
+      <select [ngModel]="vinId" (ngModelChange)="onVinagretaChange($event)" name="vinagreta">
+        <option [value]="vinagreta.IdExtraStock" *ngFor="let vinagreta of vinegretas">{{vinagreta.Nombre}}</option>
+      </select> 
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <label>Precio individual: </label><label> {{currentSalad.Precio}}</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <label>Cantidad de ensaladas</label><input type="number" min=1 [(ngModel)]="quantity">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button (click)="saveSalad()">Confirmar</button>
+    <button (click)="close()">Cancelar</button>
+  </div>
+</div>

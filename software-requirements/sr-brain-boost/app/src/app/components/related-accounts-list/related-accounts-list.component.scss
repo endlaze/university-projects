@@ -1,0 +1,59 @@
+$blue-background: #2d82c5;
+
+.list-searchbar {
+  margin-top: 0.6em
+}
+
+.add-button {
+  margin-top: 0.6em;
+  --background: #2d82c5;
+  --color: white;
+  height: 2.20em;
+  margin-top: 0.83em;
+}
+
+.add-button-icon {
+  padding-right: 0.2em;
+}
+
+.vertical-center {
+  vertical-align: middle;
+}
+
+.flex-content {
+  display: flex;
+}
+
+.blue-component {
+  background-color: $blue-background;
+}
+
+.header-font-size {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.add-section {
+  justify-content: center;
+}
+
+.padd-1 {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.grid-label {
+  display: grid;
+}
+
+.prof-font-size {
+  font-size: 0.91em;
+}
+
+.caption-padding {
+  padding-left: 1.8em;
+}
+
+.bold-label {
+  font-weight: bold;
+}

@@ -1,0 +1,55 @@
+<app-nav></app-nav>
+<div class="container body-wrapper pl-0 pr-0 max-preview-width">
+  <div class="row bg-white">
+    <div class="pl-5 pt-5"><img class="cover shadow" src="{{this.album.cover}}"></div>
+    <div class="pl-5 font-weight-bold pt-5">
+      <h1 class="d-block pt-2 wrap-text title-max-size">{{this.album.title}}</h1>
+      <label class="d-block pl-3 date-text">{{this.album.releaseDate}}</label>
+      <label class="d-block pl-3 text-danger">{{this.album.artist}}</label>
+      <label class="d-block pl-3 text-danger">{{this.album.gender}}</label>
+    </div>
+  </div>
+  <div class="row pt-5 bg-white">
+    <div class="col bg-white text-white">
+      <div class="pl-3 font-weight-bold text-dark">
+        <h1 class="d-block pb-4 wrap-text title-max-size">Lista de canciones</h1>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Duración</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let track of this.album.tracklist">
+          <tr>
+            <th>{{track.number}}</th>
+            <td>{{track.title}}</td>
+            <td>{{track.length}}</td>
+            <td>
+              <button class="btn btn-danger float-right"
+                *ngIf="(!this.checkLoggedIn() || this.currentUser.membership === 1 || this.currentUser.membership === 4) && !this.ownedTracks.has(track.number)"
+                (click)="buyTrack(track)">
+                <label class="text-white font-weight-bold btn-min-lbl-w"><i class="fas fa-cart-plus pr-2"> </i>
+                  <span *ngIf="!this.checkLoggedIn()">${{track.price}}</span>
+                  <span *ngIf="this.checkLoggedIn() && this.isUsrBirthMonth">
+                    <span class="disc-price">${{track.price}}</span>
+                    ${{track.price - (track.price * 0.05)}}</span>
+                </label>
+              </button>
+              <button class="btn btn-danger float-right"
+                *ngIf="this.checkLoggedIn() && (this.currentUser.membership === 2 || this.currentUser.membership === 3 ||this.ownedTracks.has(track.number))"
+                (click)="addToPlaylist(track)">
+                <label class="text-white font-weight-bold btn-min-lbl-w"><i class="fas fa-plus"></i> Agregar a la
+                  playlist</label>
+              </button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

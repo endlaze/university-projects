@@ -1,0 +1,12 @@
+let
+    var m : Integer;
+    local
+        var n init 2;
+	func mult (var a : Integer, var b : Integer): Integer ~ a * b
+    in
+    	func double (var a : Integer): Integer ~ mult(var a, var n) 
+    end
+in
+    m := 9; 
+    m := double(var m)
+end

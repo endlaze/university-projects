@@ -1,0 +1,19 @@
+.max-preview-width{
+    max-width: 50em;
+}
+
+.or-text{
+    color: red;
+}
+
+.wrap-text {
+    word-wrap: break-word;
+}
+
+.title-max-size{
+    max-width: 15em;
+}
+
+.btn-min-lbl-w {
+    min-width: 195px;
+}

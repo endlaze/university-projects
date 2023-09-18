@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+<section class="body-wrapper">
+  <div class=" row page-title text-white d-block">
+    <h1 class="font-weight-bold"><i class="fas fa-film pr-2"></i>Películas</h1>
+    <div class="page-subtitle font-weight-bold pt-2">
+      Aquí encontraras las mejores películas de todos los tiempos.
+    </div>
+  </div>
+  <div class="row p-5 center">
+    <div class="col center pl-5 pr-5 mb-5 mw-220 zoom shadow" *ngFor="let movie of cinemaCatalog">
+      <div class="text-center">
+        <div>
+          <img class="cover" src="{{movie.cover}}">
+        </div>
+        <div class="w-200 bg-white pt-2 pb-2 mh-86">
+          <label class="text-dark pl-2 pr-2  fs-13">{{movie.title}}</label>
+        </div>
+        <div class="w-200 bg-white pt-2 pb-2">
+          <label class="text-dark pt-1 ">{{movie.gender}}</label>
+        </div>
+        <div class="w-200 bg-danger center unselectable"
+          *ngIf="(!this.checkLoggedIn() || this.currentUser.membership === 2 || this.currentUser.membership === 4 ) && !this.ownedVideos.has(movie.id)"
+          (click)="buyMovie(movie)">
+          <label class=" text-white font-weight-bold pt-3"><i class="fas fa-cart-plus pr-2"> </i>
+            <span *ngIf="!this.checkLoggedIn()">${{movie.price}}</span>
+            <span *ngIf="this.checkLoggedIn() && this.isUsrBirthMonth(this.currentUser.birthdate)">
+              <span class="disc-price">${{movie.price}}</span>
+              
+              ${{movie.price - (movie.price * 0.05)}}</span>
+          </label>
+        </div>
+        <div class="w-200 bg-danger center unselectable"
+          *ngIf="(this.checkLoggedIn() && (this.currentUser.membership === 1 || this.currentUser.membership === 3 || this.ownedVideos.has(movie.id)))"
+          (click)="addToPlaylist(movie)">
+          <label class=" text-white font-weight-bold pt-3"><i class="fas fa-plus pr-2"></i> Playlist</label>
+        </div>
+        <div class="w-200 bg-danger center unselectable"
+          *ngIf="this.checkLoggedIn() && (this.currentUser.membership === 2 || this.currentUser.membership === 4) && isUsrBirthday(this.currentUser.birthdate)">
+          <label class=" text-white font-weight-bold pt-3"><i class="fas fa-play"></i> Reproducir</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

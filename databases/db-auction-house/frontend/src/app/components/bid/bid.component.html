@@ -1,0 +1,15 @@
+<app-app-nav></app-app-nav>
+<div>
+  <table>
+    <tr>
+      <th>Fecha de la puja</th>
+      <th>Monto de puja</th>
+      <th>Usuario que realiza la puja</th>
+    </tr>
+    <tr *ngFor="let bid of bids">
+      <td>{{toDate(bid.FechaPuja)}}</td>
+      <td>{{bid.Oferta}}</td>
+      <td (click)=goToProfile(bid.Alias)>{{bid.Alias}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+{
+    "name": "stock_roles",
+    "base": "PersistedModel",
+    "plural": "stock_roles",
+    "idInjection": false,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "id": true
+        },
+        "role_desc": {
+            "type": "String"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}
